@@ -17,9 +17,9 @@ disp(Omkrets_triangel)
 %% Uppgift 2
 %a Beräkna pi
 clear, clc
-pi_delat_pa4=pi/4 %Pi delat med 4 
+pi_delat_pa4=pi/4; %Pi delat med 4 
 termer=0;
-paj=0
+paj=0;
 paj_4=0; %pi/4 förhoppningsvis
 format long
 while abs(paj-pi)>0.00000688
@@ -53,7 +53,6 @@ disp(termer)
 %% Uppgift 2 B
 clear, clc
 paj_4=0;
-i=0;
 for i=0:1000
 paj_4=paj_4+(((-1)^i)/(2*i+1));
 end
