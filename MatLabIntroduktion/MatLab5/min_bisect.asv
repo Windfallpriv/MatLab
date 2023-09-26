@@ -27,12 +27,17 @@ function m=min_bisect(f,I,tol)
         m=[];
         return
     end
+c=0;
     while b-a > tol
-       if (f(a)*f((f(a)+f(b))/2))<0
-        b=(f(a)+f(b))/2;
-    else
-        a=(f(a)+f(b))/2;
-    end
+        if (f(a)*f(b))<0
+            c=(f(a)+f(b))/2;
+            if (f(a)*f(c))<0
+                b=c;
+              else
+                a=c;
+            end
+        else
+        end
     end
 
     m=(a+b)/2;
