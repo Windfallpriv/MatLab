@@ -45,4 +45,4 @@ axis([-2 14 -2 6])
 
 nollp=min_bisect(y,[5,15],0.01)
 xline(nollp)
-text(9,-1,"Nollpunkten är " + nollp)
+text(6,-1,"Nollpunkten är " + nollp)
