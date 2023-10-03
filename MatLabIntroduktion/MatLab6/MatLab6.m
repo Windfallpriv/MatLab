@@ -50,9 +50,11 @@ text (-1,3,"Nollpunkterna är " +np1+" "+np2+" "+np3)
 %% Uppgift 4
 clear, clc , format long
 x=linspace(-10,10,1000);
-f=@(x)((3+sin(2*x))/(1+exp(0.03*(x.^2))))-1.2;
+f=@(x)((3+sin(2*x))./(1+exp(0.03*(x.^2))))-1.2;
 plot(x,f(x),"g") %Visar inte grafen?
 grid on
+axis([-7 7 -1 1])
+yline(0)
 
 x1=fzero(f,-3);
 x2=fzero(f,-1.5);
