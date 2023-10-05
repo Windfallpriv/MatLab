@@ -1,6 +1,6 @@
 function y = kastbana2(x,y0,v,theta)
 g=9.81;
-theta=45;
+theta=60;
 t=theta*pi/180;
 y0=1.85; v=10;  
 

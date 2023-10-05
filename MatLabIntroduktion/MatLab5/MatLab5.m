@@ -8,14 +8,15 @@ axis([-2 7 -1 1]), grid on
 % Uppgift 2
 a=-1;
 b=0;
-
+k=0
 if (f(a)*f(b))<0
     if (f(a)*f((f(a)+f(b))/2))<0
-        b=(f(a)+f(b))/2;
+        b=(a+b)/2;
     else
-        a=(f(a)+f(b))/2;
+        a=(a+b)/2;
     end
 end
+
 
 %% Uppgift 4
 clear, clc
@@ -46,3 +47,8 @@ axis([-2 14 -2 6])
 nollp=min_bisect(y,[5,15],0.01)
 xline(nollp)
 text(6,-1,"Nollpunkten är " + nollp)
+
+%%
+x=linspace(1,2)
+y =@(x) cos(x)
+min_bisect(y,[1,2],0.01)

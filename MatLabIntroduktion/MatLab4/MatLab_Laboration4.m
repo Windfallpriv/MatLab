@@ -14,21 +14,7 @@ Omkrets_triangel = polylen(Triangel(1,:),Triangel(2,:));
 fprintf("Omkretsen av triangeln är") %För att det ska hamna på samma rad
 disp(Omkrets_triangel)
 
-%% Uppgift 2
-%a Beräkna pi
-clear, clc
-pi_delat_pa4=pi/4; %Pi delat med 4 
-termer=0;
-paj=0;
-paj_4=0; %pi/4 förhoppningsvis
-format long
-while abs(paj-pi)>0.00000688
-    paj_4=paj_4+(((-1)^termer)/(2*termer+1));
-    termer =termer+1; %För att veta antalet termer
-    paj=paj_4*4;
-end
-disp(paj)
-disp(pi)
+
 %% Uppgift 2 A
 clc, clear
 %a
