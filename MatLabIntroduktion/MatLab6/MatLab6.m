@@ -2,12 +2,19 @@
 clear, clc
 f=@(x) x.^3-cos(4*x);
 x=linspace(-2,2,1000);
-plot(x,f(x))
+plot(x,f(x)), hold on
 grid on
 yline(0)
 text(-1,4,"3st nollställen")
-text(-1,3,"Nollställena är ca (0.9, -0.4, 0.4)")
+text(-1,3,"Nollställena är ca (-0.9, -0.4, 0.4)")
 
+tol=1e-8;
+Df=@(x) 3.*x.^2 +4.*sin(4.*x);
+np1 =min_newton(f,Df,-.9,tol);
+np2 =min_newton(f,Df,-.4,tol);
+np3 =min_newton(f,Df,.4,tol);
+
+plot(np1,0,'-o',np2,0,'-o',np3,0,'-o')
 %% Uppgift 2 a
 clear, clc, format long
 
