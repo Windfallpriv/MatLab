@@ -1,0 +1,13 @@
+clear,clc
+n=50;
+I=[0,3];
+format long
+x=linspace(I(1),I(2),n+1);
+ f=@(x)x.*sin(x);
+E=min_integral(f,I,n,1) 
+
+
+%rektangelmetoden vänster (k=1),
+% rektangelmetoden höger (k=2),
+% mittpunktsmetoden (k=3)      
+% trapetsmetoden (k=4).
