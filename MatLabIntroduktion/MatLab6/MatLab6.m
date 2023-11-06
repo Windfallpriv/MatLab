@@ -15,7 +15,8 @@ np2 =min_newton(f,Df,-.4,tol);
 np3 =min_newton(f,Df,.4,tol);
 
 plot(np1,0,'-o',np2,0,'-o',np3,0,'-o')
-%% Uppgift 2 a
+hold off
+%% Uppgift 3 a
 clear, clc, format long
 
 x=linspace(-5,5,1000);
@@ -35,7 +36,7 @@ np4 =min_newton(f,Df,4,tol);
 plot(np1,0,'-o',np2,0,'-o',np3,0,'-o',np4,0,'-o')
 hold off
 text (0,5,"Nollpunkterna är " +np1+" "+np2+" "+np3+" "+np4)
-%% Uppgift 2 b
+%% Uppgift 3 b
 clear, clc, format long
 
 x=linspace(-5,5,1000);
@@ -69,6 +70,7 @@ x2=fzero(f,-1.5);
 x3=fzero(f,-.5);
 x4=fzero(f,1.5);
 x5=fzero(f,4.5);
-plot(x1,0,'-o',x2,0,'-o',x3,0,'-o',x4,0,'-o',x5,0,'-o'),hold off
-fprintf("Nollpunkterna: "+ x1+" "+x2+" "+x3+" "+x4+" "+x5)
+x6=fzero(f,3);
+plot(x1,0,'-o',x2,0,'-o',x3,0,'-o',x4,0,'-o',x5,0,'-o',x6,0,'-o'),hold off
+fprintf("Nollpunkterna: "+ x1+" "+x2+" "+x3+" "+x4+" "+x5+" "+x6)
 
