@@ -1,0 +1,25 @@
+clear,clc
+
+function solve_system()
+    % Set initial conditions and time span
+    y0 = [2.8; 1.3];       % Initial conditions for y1 and y2
+    tspan = [0 10];    % Time span
+
+    % Solve the system of differential equations using ode45
+    [t, y] = ode45(@(t, y) myODESystem(t, y), tspan, y0);
+
+    % Plot the solutions
+    plot(t, y(:, 1), 'r', t, y(:, 2), 'b')
+    legend('y1(t)', 'y2(t)')
+    xlabel('Time')
+    ylabel('y(t)')
+    title('Solution of the System of Differential Equations')
+end
+
+function dydt = myODESystem(t, y)
+    % Define your system of differential equations here
+    dydt = zeros(2, 1);
+    dydt(1) = -2 * y(1) - y(1) * y(2);
+    dydt(2) = y(1) + 1.2 * y(1) * y(2) - y(2)^2;
+end
+
